@@ -1,13 +1,13 @@
 import { h } from 'preact';
 import Header from './header';
+import Standings from './standings';
 import style from './style';
 
-const App = () => {
+const App = () => {	
 	return (
 		<div className={style.app}>
 			<Header />
-			
-			<h1>Godspeed Spider-Man</h1>
+			<Standings />
 		</div>
 	);
 }
