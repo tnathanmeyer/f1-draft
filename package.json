@@ -18,7 +18,7 @@
   "devDependencies": {
     "eslint": "^8.9.0",
     "eslint-config-preact": "*",
-    "preact-cli": "*",
+    "preact-cli": "^3.3.5",
     "sass": "^1.49.7",
     "sass-loader": "^10.2.1",
     "sirv-cli": "^2.0.2"
