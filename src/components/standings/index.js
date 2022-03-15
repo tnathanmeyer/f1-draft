@@ -1,5 +1,6 @@
 import { h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
+import Column from '../column';
 
 const Standings = () => {
 	const [loading, setLoading] = useState(true);
@@ -60,13 +61,11 @@ const Standings = () => {
 
 	if (!loading) {
 		return players.map(player => 
-			<>
-				<h3>{player}</h3>
-				<h4>Total Points: {points[player]}</h4>
-				{drivers[player].map(driver => 
-					<p>{driver.name} ({driver.team})</p>
-				)}
-			</>
+			<Column
+				playerName={player}
+				drivers={drivers[player]}
+				points={points[player]}
+			/>
 		);
 	} else {
 		return <p>Loading...</p>
