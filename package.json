@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "preact build",
+    "build:gh": "GITHUB_PAGES=f1-draft preact build && dot-json ./build/manifest.json start_url \"/f1-draft/\"",
     "serve": "sirv build --port 8080 --cors --single",
     "dev": "preact watch",
     "lint": "eslint src"
@@ -16,6 +17,7 @@
     "build/*"
   ],
   "devDependencies": {
+    "dot-json": "^1.2.2",
     "eslint": "^8.9.0",
     "eslint-config-preact": "*",
     "preact-cli": "^3.3.5",
