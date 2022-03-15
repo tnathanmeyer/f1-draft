@@ -1,6 +1,6 @@
 {
-  "name": "f1draft",
-  "short_name": "f1draft",
+  "name": "f1-draft",
+  "short_name": "f1-draft",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
