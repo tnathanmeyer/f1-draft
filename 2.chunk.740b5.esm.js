@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{PUXI:function(s,a,n){"use strict";n.r(a);a.default={Josh:["alonso","hamilton","latifi","leclerc","mick_schumacher","perez","ricciardo","tsunoda","vettel","zhou"],Nathan:["albon","bottas","gasly","kevin_magnussen","max_verstappen","norris","ocon","russell","sainz","stroll"]}}}]);
+//# sourceMappingURL=2.chunk.740b5.esm.js.map
