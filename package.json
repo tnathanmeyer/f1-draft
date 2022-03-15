@@ -26,7 +26,6 @@
     "sirv-cli": "^2.0.2"
   },
   "dependencies": {
-    "preact": "^10.6.5",
-    "preact-render-to-string": "^5.1.19"
+    "preact": "^10.6.5"
   }
 }
