@@ -10,7 +10,7 @@ const Standings = () => {
 	useEffect(() => {
 		const getData = async () => {
 			const draftsPromise = import('../../data/drafts');
-			const apiPromise = fetch('http://ergast.com/api/f1/2022/driverStandings.json');
+			const apiPromise = fetch('https://ergast.com/api/f1/2022/driverStandings.json');
 
 			const [draftsModule, response] = await Promise.all([draftsPromise, apiPromise]);
 			const data = await response.json();
