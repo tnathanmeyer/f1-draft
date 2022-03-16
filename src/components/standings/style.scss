@@ -1,0 +1,12 @@
+.standings {
+	display: flex;
+
+	div[class^='column'] {
+		margin: 10px;
+
+		&:not(:last-of-type) {
+			border-right: 2px solid black;
+			box-sizing: border-box;
+		}
+	}
+}
