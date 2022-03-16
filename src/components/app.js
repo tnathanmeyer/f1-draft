@@ -7,7 +7,9 @@ const App = () => {
 	return (
 		<div className={style.app}>
 			<Header />
-			<Standings />
+			<main>
+				<Standings />
+			</main>
 		</div>
 	);
 }
