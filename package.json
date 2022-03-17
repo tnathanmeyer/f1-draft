@@ -4,15 +4,18 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "npx @11ty/eleventy",
-    "dev": "npx @11ty/eleventy --watch"
+    "build": "eleventy",
+    "start": "eleventy --serve",
+    "watch": "eleventy --watch"
   },
   "eslintIgnore": [
     "build/*"
   ],
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
+    "clean-css": "^5.2.4",
     "eslint": "^8.11.0",
+    "html-minifier": "^4.0.0",
     "sass": "^1.49.9"
   }
 }
