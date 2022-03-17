@@ -3,30 +3,13 @@
   "name": "f1-draft",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {
-    "build": "preact build",
-    "build:gh": "GITHUB_PAGES=f1-draft preact build && dot-json ./build/manifest.json start_url \"/f1-draft/\"",
-    "serve": "sirv build --port 8080 --cors --single",
-    "dev": "preact watch",
-    "lint": "eslint src"
-  },
-  "eslintConfig": {
-    "extends": "preact"
-  },
+  "scripts": {},
   "eslintIgnore": [
     "build/*"
   ],
   "devDependencies": {
-    "dot-json": "^1.2.2",
     "eslint": "^8.9.0",
-    "eslint-config-preact": "*",
-    "preact-cli": "^3.3.5",
     "sass": "^1.49.7",
-    "sass-loader": "^10.2.1",
-    "sirv-cli": "^2.0.2"
-  },
-  "dependencies": {
-    "preact": "^10.6.5",
-    "preact-render-to-string": "^5.1.19"
+    "sass-loader": "^10.2.1"
   }
 }
