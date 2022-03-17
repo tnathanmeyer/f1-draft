@@ -3,7 +3,10 @@
   "name": "f1-draft",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "dev": "npx @11ty/eleventy --watch"
+  },
   "eslintIgnore": [
     "build/*"
   ],
