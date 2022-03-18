@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "eleventy",
+    "build": "env NODE_ENV=production npx eleventy --pathprefix 'f1-draft'",
     "start": "eleventy --serve",
     "watch": "eleventy --watch"
   },
