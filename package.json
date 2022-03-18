@@ -8,12 +8,22 @@
     "start": "eleventy --serve",
     "watch": "eleventy --watch"
   },
+  "eslintConfig": {
+    "env": {
+      "es6": true,
+      "node": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 2017
+    }
+  },
   "eslintIgnore": [
-    "build/*"
+    "dist/*"
   ],
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
-    "clean-css": "^5.2.4",
+    "@11ty/eleventy-fetch": "^3.0.0",
+    "csso": "^5.0.3",
     "eslint": "^8.11.0",
     "html-minifier": "^4.0.0",
     "sass": "^1.49.9"

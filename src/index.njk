@@ -1,5 +1,13 @@
 ---
-layout: layouts/base.njk
+layout: layouts/base
 ---
 
-<p>Hello there</p>
+{% for standing in standings %}
+	<h1>{{ standing.name }}</h1>
+	<h3>{{ standing.points }} points</h3>
+	<ol>
+		{% for driver in standing.drivers %}
+			<li>{{ driver.name }} ({{ driver.team }})</li>
+		{% endfor %}
+	</ol>
+{% endfor %}

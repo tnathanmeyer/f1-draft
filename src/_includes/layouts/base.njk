@@ -1,5 +1,5 @@
 {% set css %}
-	{% include '../../scss/test.scss' %}
+	{% include '../../scss/style.scss' %}
 {% endset %}
 <!doctype html>
 <html>
@@ -9,8 +9,9 @@
 		</style>
 	</head>
 	<body>
+		{% include 'components/header.html' %}
 		<main>
-			{{ content }}
+			{{ content | safe }}
 		</main>
 	</body> 
 </html>

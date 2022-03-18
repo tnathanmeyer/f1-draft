@@ -1,13 +1,13 @@
 const sass = require('sass');
 const htmlmin = require('html-minifier');
-const CleanCSS = require('clean-css');
+const { minify } = require('csso');
 
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addTransform("htmlmin", htmlminTransform);
 
 	eleventyConfig.addFilter('cssmin', function (code) {
 		const compiled = sass.compileString(code);
-		return new CleanCSS({}).minify(compiled.css).styles;
+		return minify(compiled.css).css;
 	});
 
 	eleventyConfig.addWatchTarget('./src/scss');
