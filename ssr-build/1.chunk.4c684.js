@@ -1,2 +1,0 @@
-exports.ids=[1],exports.modules={PUXI:function(s,e,o){"use strict";o.r(e);e.default={Josh:["alonso","hamilton","latifi","leclerc","mick_schumacher","perez","ricciardo","tsunoda","vettel","zhou"],Nathan:["albon","bottas","gasly","kevin_magnussen","max_verstappen","norris","ocon","russell","sainz","stroll"]}}};
-//# sourceMappingURL=1.chunk.4c684.js.map
