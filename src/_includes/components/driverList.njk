@@ -1,0 +1,9 @@
+{% from 'components/driverCard.njk' import driverCard %}
+
+{% macro driverList(drivers) %}
+<div class='driverList'>
+	{% for driver in drivers %}
+	{{ driverCard(driver) }}
+	{% endfor %}
+</div>
+{% endmacro %}

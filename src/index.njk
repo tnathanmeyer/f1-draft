@@ -2,12 +2,14 @@
 layout: layouts/base
 ---
 
-{% for standing in standings %}
-	<h1>{{ standing.name }}</h1>
-	<h3>{{ standing.points }} points</h3>
-	<ol>
-		{% for driver in standing.drivers %}
-			<li>{{ driver.name }} ({{ driver.team }})</li>
-		{% endfor %}
-	</ol>
-{% endfor %}
+{% from 'components/driverList.njk' import driverList %}
+
+<div class='standings'>
+	{% for standing in standings %}
+	<div class='column'>
+		<h3>{{ standing.name }}</h3>
+		<h4>{{ standing.points }} points</h4>
+		{{ driverList(standing.drivers) }}
+	</div>
+	{% endfor %}
+</div>

@@ -3,7 +3,7 @@ const drafts = require('./drafts');
 
 module.exports = async function() {
 	const data = await EleventyFetch(
-		'https://ergast.com/api/f1/2021/driverStandings.json',
+		'https://ergast.com/api/f1/2022/driverStandings.json',
 		{
 			duration: '1h',
 			type: 'json'
@@ -13,6 +13,7 @@ module.exports = async function() {
 	const driverData = data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
 	const formattedData = driverData.map(driver => {
 		const driverInfo = driver.Driver;
+		
 		let team = 'N/A';
 		if (driver.Constructors.length) {
 			const currentTeam = driver.Constructors.pop();
