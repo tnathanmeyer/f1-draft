@@ -5,7 +5,7 @@ module.exports = async function() {
 	const data = await EleventyFetch(
 		'https://ergast.com/api/f1/2022/driverStandings.json',
 		{
-			duration: '1h',
+			duration: '30m',
 			type: 'json'
 		}
 	);
