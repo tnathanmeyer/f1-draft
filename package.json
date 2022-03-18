@@ -4,29 +4,28 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "preact build",
-    "build:gh": "GITHUB_PAGES=f1-draft preact build && dot-json ./build/manifest.json start_url \"/f1-draft/\"",
-    "serve": "sirv build --port 8080 --cors --single",
-    "dev": "preact watch",
-    "lint": "eslint src"
+    "build": "env NODE_ENV=production npx eleventy --pathprefix 'f1-draft'",
+    "start": "eleventy --serve",
+    "watch": "eleventy --watch"
   },
   "eslintConfig": {
-    "extends": "preact"
+    "env": {
+      "es6": true,
+      "node": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 2017
+    }
   },
   "eslintIgnore": [
-    "build/*"
+    "dist/*"
   ],
   "devDependencies": {
-    "dot-json": "^1.2.2",
-    "eslint": "^8.9.0",
-    "eslint-config-preact": "*",
-    "preact-cli": "^3.3.5",
-    "sass": "^1.49.7",
-    "sass-loader": "^10.2.1",
-    "sirv-cli": "^2.0.2"
-  },
-  "dependencies": {
-    "preact": "^10.6.5",
-    "preact-render-to-string": "^5.1.19"
+    "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy-fetch": "^3.0.0",
+    "csso": "^5.0.3",
+    "eslint": "^8.11.0",
+    "html-minifier": "^4.0.0",
+    "sass": "^1.49.9"
   }
 }

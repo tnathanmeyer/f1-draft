@@ -1,5 +1,4 @@
+.DS_Store
 node_modules
-/build
-/*.log
-
-size-plugin.json
+dist
+.cache

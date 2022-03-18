@@ -1,0 +1,15 @@
+---
+layout: layouts/base
+---
+
+{% from 'components/driverList.njk' import driverList %}
+
+<div class='standings'>
+	{% for standing in standings %}
+	<div class='column'>
+		<h3>{{ standing.name }}</h3>
+		<h4>{{ standing.points }} points</h4>
+		{{ driverList(standing.drivers) }}
+	</div>
+	{% endfor %}
+</div>

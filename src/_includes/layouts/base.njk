@@ -1,0 +1,17 @@
+{% set css %}
+	{% include '../../scss/style.scss' %}
+{% endset %}
+<!doctype html>
+<html>
+	<head>
+		<style>
+			{{ css | cssmin | safe }}
+		</style>
+	</head>
+	<body>
+		{% include 'components/header.html' %}
+		<main>
+			{{ content | safe }}
+		</main>
+	</body> 
+</html>
