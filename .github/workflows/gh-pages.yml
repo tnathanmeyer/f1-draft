@@ -27,6 +27,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      - name: Cache data
+        uses: actions/cache@v2
+        with:
+          path: .cache
+          key: ${{ runner.os }}-data-${{ hashFiles('.cache/*') }}
+          restore-keys: |
+            ${{ runner.os }}-data-
+
       - name: Install dependencies & build
         run: |
           npm ci --ignore-scripts
