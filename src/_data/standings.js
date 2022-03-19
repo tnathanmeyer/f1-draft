@@ -1,14 +1,26 @@
 const EleventyFetch = require('@11ty/eleventy-fetch');
 const drafts = require('./drafts');
 
-module.exports = async function() {
-	const data = await EleventyFetch(
+async function fetchData() {
+	return EleventyFetch(
 		'https://ergast.com/api/f1/2022/driverStandings.json',
 		{
 			duration: '30m',
 			type: 'json'
 		}
 	);
+}
+
+module.exports = async function() {
+	if (process.env.GITHUB_ACTIONS) {
+		try {
+			data = require('../../data.json');
+		} catch (err) {
+			data = await fetchData();
+		}
+	} else {
+		data = await fetchData();
+	}
 
 	const driverData = data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
 	const formattedData = driverData.map(driver => {
