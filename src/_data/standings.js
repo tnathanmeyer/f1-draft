@@ -6,7 +6,8 @@ async function fetchData() {
 		'https://ergast.com/api/f1/2022/driverStandings.json',
 		{
 			duration: '30m',
-			type: 'json'
+			type: 'json',
+			directory: './.cache'
 		}
 	);
 }
