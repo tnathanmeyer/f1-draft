@@ -43,10 +43,6 @@ jobs:
       - name: Run build
         run: npm run build
 
-      - name: What happens here?
-        run: |
-          hashFiles '.cache/*'
-
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
