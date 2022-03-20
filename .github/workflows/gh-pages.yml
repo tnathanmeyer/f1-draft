@@ -30,13 +30,8 @@ jobs:
 
       - name: Install dependencies & build
         run: |
-          npm ci --ignore-scripts
+          npm install
           npm run build          
-
-      - name: Where am I??
-        run: |
-          pwd
-          ls -a
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.5
