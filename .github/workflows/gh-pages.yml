@@ -30,8 +30,8 @@ jobs:
       - name: Cache data
         uses: actions/cache@v2
         with:
-          path: .cache
-          key: ${{ runner.os }}-data-${{ hashFiles('.cache/*') }}
+          path: ./.cache
+          key: ${{ runner.os }}-data-${{ hashFiles('**/.cache/*') }}
           restore-keys: |
             ${{ runner.os }}-data-
 
