@@ -31,14 +31,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Cache data
+      - name: Cache test
         uses: actions/cache@v2
-        id: data
+        id: test
         with:
           path: .cache
-          key: ${{ runner.os }}-data-${{ hashFiles('**/eleventy-fetch-*') }}
+          key: ${{ runner.os }}-test-${{ hashFiles('dist/index.html') }}
           restore-keys: |
-            ${{ runner.os }}-data-
+            ${{ runner.os }}-test-
 
       - name: Run build
         run: npm run build
