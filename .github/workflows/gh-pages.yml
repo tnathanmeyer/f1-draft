@@ -41,7 +41,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: .cache
-          key: ${{ runner.os }}-data-${{ env.cache_time }}
+          key: ${{ runner.os }}-fetched-${{ env.cache_time }}
+          restore-keys: |
+            ${{ runner.os }}-fetched-
 
       - name: Run build
         run: npm run build
