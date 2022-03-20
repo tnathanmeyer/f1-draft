@@ -28,19 +28,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: Cache data
-        uses: actions/cache@v2
-        id: data
-        with:
-          path: .cache
-          key: ${{ runner.os }}-data-${{ hashFiles('**/.cache/*') }}
-          restore-keys: |
-            ${{ runner.os }}-data-
-
       - name: Install dependencies & build
         run: |
           npm ci --ignore-scripts
           npm run build          
+
+      - name: Where am I??
+        run: |
+          pwd
+          ls -a
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.5
