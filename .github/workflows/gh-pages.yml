@@ -32,6 +32,17 @@ jobs:
         if: steps.node-cache.outputs.cache-hit != 'true'
         run: npm ci --ignore-scripts
 
+      - name: Set timestamp for data cache key
+        run: |
+          test=`date '+%s'`
+          echo "cache_time="$(($test - ($test % (30*60)))) >> $GITHUB_ENV
+
+      - name: Cache fetched data
+        uses: actions/cache@v2
+        with:
+          path: .cache
+          key: ${{ runner.os }}-data-${{ env.cache_time }}
+
       - name: Run build
         run: npm run build
 
