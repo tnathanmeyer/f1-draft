@@ -45,7 +45,7 @@ jobs:
 
       - name: What happens here?
         run: |
-          hashFiles('.cache/*')
+          hashFiles '.cache/*'
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.5
