@@ -25,7 +25,6 @@ header {
 .column {
 	padding: 10px;
 	flex: 1 362px;
-	border-bottom: 2px solid lightgray;
 
 	h3 {
 		margin: 0;
@@ -59,8 +58,8 @@ header {
 
 @media (prefers-color-scheme: dark) {
 	html, body {
-		color: lightgray;
-		background-color: black;
+		color: gray;
+		background-color: black
 	}
 
 	header {
@@ -72,7 +71,7 @@ header {
 	}
 
 	.driver {
-		border: 1px solid lightgray;
+		border: 1px solid gray;
 	}
 }
 
@@ -80,6 +79,7 @@ header {
 	.column {
 		&:not(:last-of-type) {
 			border-right: none;
+			border-bottom: 2px solid lightgray;
 		}
 	}
 }
