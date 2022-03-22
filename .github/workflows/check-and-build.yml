@@ -34,7 +34,6 @@ jobs:
         run: |
           diff -q f1data.json newf1data.json || echo "diff-data="$? >> $GITHUB_ENV
           echo "diff-data=0" >> $GITHUB_ENV
-        continue-on-error: true
 
       - name: Overwrite data and set output if data is different
         id: checkdata
