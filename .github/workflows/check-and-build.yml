@@ -1,8 +1,11 @@
 name: Check API & Maybe Build
 
 on:
+  push:
+    branches:
+      - main
   schedule:
-    - cron: '*/30 7-23 * * 0,2'
+    - cron: '*/30 * * * *'
 
 jobs:
   checkapi:
