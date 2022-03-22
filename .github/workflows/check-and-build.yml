@@ -32,7 +32,6 @@ jobs:
 
       - name: See if new data is different from cached data
         run: diff -q f1data.json newf1data.json
-        continue-on-error: true
 
       - name: Overwrite data and set output if data is different
         id: checkdata
@@ -42,6 +41,7 @@ jobs:
           echo "::set-output name=new-data::true"\
 
       - name: Check completed
+        if: ${{ always() }}
         run: true
 
   # build:
