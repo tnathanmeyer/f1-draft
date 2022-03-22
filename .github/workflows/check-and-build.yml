@@ -33,12 +33,11 @@ jobs:
       - name: See if new data is different from cached data
         id: checkdata
         run: |
-          diff -q f1data.json newf1data.json || echo "::set-output name=diff::true"
-          echo "::set-output name=diff::false"
+          diff -q f1data.json newf1data.json || echo "diff=true" >> $GITHUB_ENV
 
       - name: Overwrite data and set output if data is different
         id: update
-        if: steps.checkdata.outputs.diff
+        if: env.diff
         run: |
           mv newf1data.json f1data.json
           echo "::set-output name=new-data::true"\
