@@ -31,12 +31,14 @@ jobs:
         run: curl "https://ergast.com/api/f1/2022/driverStandings.json" -o newf1data.json
 
       - name: See if new data is different from cached data
-        run: diff -q f1data.json newf1data.json | echo "diff-data="$? >> $GITHUB_ENV
+        run: |
+          diff -q f1data.json newf1data.json || echo "diff-data="$? >> $GITHUB_ENV
+          echo "diff-data=0" >> $GITHUB_ENV
         continue-on-error: true
 
       - name: Overwrite data and set output if data is different
         id: checkdata
-        if: env.diff-data >= 1
+        if: env.diff-data != '0'
         run: |
           mv newf1data.json f1data.json
           echo "::set-output name=new-data::true"\
