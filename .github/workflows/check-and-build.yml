@@ -42,7 +42,7 @@ jobs:
           mv newf1data.json f1data.json
           echo "::set-output name=new-data::true"\
 
-  build:
-    needs: checkapi
-    if: needs.checkapi.outputs.new-data
-    uses: ./.github/workflows/gh-pages.yml
+  # build:
+  #   needs: checkapi
+  #   if: needs.checkapi.outputs.new-data
+  #   uses: ./.github/workflows/gh-pages.yml
