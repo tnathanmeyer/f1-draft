@@ -2,7 +2,7 @@ name: Check API & Maybe Build
 
 on:
   schedule:
-    - cron: '*/30 7-23 * * 0'
+    - cron: '*/30 7-23 * * 0,2'
 
 jobs:
   checkapi:
