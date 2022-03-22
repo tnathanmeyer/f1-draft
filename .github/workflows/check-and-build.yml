@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-20.04
 
     outputs:
-      new-data: ${{ steps.checkdata.outputs.new-data }}
+      new-data: ${{ steps.update.outputs.new-data }}
 
     steps:
 
@@ -31,13 +31,14 @@ jobs:
         run: curl "https://ergast.com/api/f1/2022/driverStandings.json" -o newf1data.json
 
       - name: See if new data is different from cached data
+        id: checkdata
         run: |
-          diff -q f1data.json newf1data.json || echo "diff-data="$? >> $GITHUB_ENV
-          echo "diff-data=0" >> $GITHUB_ENV
+          diff -q f1data.json newf1data.json || echo "::set-output name=diff::true"
+          echo "::set-output name=diff::false"
 
       - name: Overwrite data and set output if data is different
-        id: checkdata
-        if: env.diff-data != '0'
+        id: update
+        if: steps.checkdata.outputs.diff
         run: |
           mv newf1data.json f1data.json
           echo "::set-output name=new-data::true"\
