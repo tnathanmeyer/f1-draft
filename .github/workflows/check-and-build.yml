@@ -42,7 +42,7 @@ jobs:
 
       - name: Check completed
         if: ${{ always() }}
-        run: echo 'Check completed'
+        run: exit 0
 
   # build:
   #   needs: checkapi
