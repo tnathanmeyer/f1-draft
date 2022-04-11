@@ -15,7 +15,6 @@ module.exports = async function() {
 		const driverInfo = driver.Driver;
 		
 		let team = 'N/A';
-		console.log(driver.Constructors.length);
 		if (driver.Constructors.length) {
 			const currentTeam = driver.Constructors.slice(-1)[0];
 			team = currentTeam.name;
