@@ -25,6 +25,9 @@ header {
 .column {
 	padding: 10px;
 	flex: 1 362px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 
 	h3 {
 		margin: 0;
