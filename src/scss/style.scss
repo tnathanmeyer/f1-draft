@@ -14,6 +14,7 @@ header {
 
 	img {
 		height: 2.5em;
+		filter: grayscale(1) brightness(5);
 	}
 }
 
@@ -72,30 +73,30 @@ header {
 @media (prefers-color-scheme: dark) {
 	html, body {
 		color: gray;
-		background-color: black
+		background-color: black;
 	}
 
 	header {
 		background-color: black;
 		outline: #990500 solid 1px;
 
-		svg {
-			filter: brightness(75%);
+		img {
+			filter: grayscale(1) brightness(4);
 		}
 	}
 
 	.driver {
 		border: 1px solid gray;
+		
+		img {
+			filter: brightness(85%);
+		}
 	}
 
 	.column {
 		&:not(:last-of-type) {
 			border-color: #990500;
 		}
-	}
-
-	img {
-		filter: brightness(85%);
 	}
 }
 
